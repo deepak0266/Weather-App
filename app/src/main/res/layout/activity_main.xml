@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sunny_background"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:queryHint="Search for a Location"
+        android:iconifiedByDefault="true"
+        android:background="@drawable/searchviewshape"
+        />
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:paddingHorizontal="2dp"
+        android:drawableLeft="@drawable/loctaion"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/audiowide"
+        android:text="Location"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/dayStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationText"
+        android:layout_alignParentRight="true"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="64dp"
+        android:drawablePadding="10dp"
+        android:text="Today"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@id/dayStatus"
+        android:layout_alignParentRight="true"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/aoboshi_one"
+        android:text="00:00 'C"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="96dp"
+        android:layout_below="@id/locationText"
+        android:layout_alignParentLeft="true"
+        android:layout_toStartOf="@+id/temp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/sun" />
+
+    <TextView
+        android:id="@+id/conditionWeatherStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/lottieAnimationView"
+        android:layout_alignBottom="@id/lottieAnimationView"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/covered_by_your_grace"
+        android:text="Season"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/maxTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/temp"
+        android:layout_alignParentRight="true"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="64dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/aladin"
+        android:text="Max: __.__"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/minTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/maxTemp"
+        android:layout_alignParentRight="true"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/aladin"
+        android:text="Min: __.__"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/minTemp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="64dp"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="10dp"
+        android:text="Day"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/day"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="64dp"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Date"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+    <FrameLayout
+        android:layout_below="@id/date"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/backgroundshape"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:layout_marginBottom="4dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_weight="1"
+                    android:layout_height="88dp"
+                    android:background="@drawable/backgroundshape"
+                    android:orientation="vertical"
+                    android:layout_margin="8dp"
+                    android:gravity="bottom"
+                    >
+                    <ImageView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/humidity"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/humidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/atomic_age"
+                        android:text="70"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/atomic_age"
+                        android:text="Humidity"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="88dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/backgroundshape"
+                    android:orientation="vertical"
+                    android:layout_margin="8dp"
+                    android:gravity="bottom"
+                    >
+                    <ImageView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/wind"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/windSpeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/atomic_age"
+                        android:text="10 m/s"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/atomic_age"
+                        android:text="Wind Speed"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="88dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/backgroundshape"
+                    android:orientation="vertical"
+                    android:layout_margin="8dp"
+                    android:gravity="bottom"
+                    >
+                    <ImageView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/conditions"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/conditionWeather"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/atomic_age"
+                        android:text="Sunny"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/atomic_age"
+                        android:text="Conditions"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:layout_marginBottom="4dp"
+            >
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_weight="1"
+                android:layout_height="88dp"
+                android:background="@drawable/backgroundshape"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:gravity="bottom"
+                >
+                <ImageView
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sunrise"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/sunriseTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/atomic_age"
+                    android:text="06:00 AM"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/atomic_age"
+                    android:text="Sunrise"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="88dp"
+                android:layout_weight="1"
+                android:background="@drawable/backgroundshape"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:gravity="bottom"
+                >
+                <ImageView
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sunset"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/sunsetTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/atomic_age"
+                    android:text="07:00 PM"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/atomic_age"
+                    android:text="Sunset"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="88dp"
+                android:layout_weight="1"
+                android:background="@drawable/backgroundshape"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:gravity="bottom"
+                >
+                <ImageView
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sea"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/seaLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/atomic_age"
+                    android:text="100 hPa"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/atomic_age"
+                    android:text="Sea Level"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>
